@@ -1,7 +1,7 @@
-package barclays.hackathon.starks.core.weka;
+package barclays.hackathon.starks.core.weka.vo;
 
-import static barclays.hackathon.starks.core.weka.Recommendation.RecommendationType.NEW_CARD;
-import static barclays.hackathon.starks.core.weka.Recommendation.RecommendationType.OFFER;
+import static barclays.hackathon.starks.core.weka.vo.Recommendation.RecommendationType.NEW_CARD;
+import static barclays.hackathon.starks.core.weka.vo.Recommendation.RecommendationType.OFFER;
 
 /**
  * Created by Bajrang on 6/11/2016.

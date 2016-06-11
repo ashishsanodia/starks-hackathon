@@ -1,5 +1,6 @@
 package barclays.hackathon.starks.core.weka;
 
+import barclays.hackathon.starks.core.weka.classifiers.OfferClassifier;
 import barclays.hackathon.starks.core.weka.classifiers.ProductClassifier;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

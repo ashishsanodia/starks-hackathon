@@ -1,6 +1,6 @@
 package barclays.hackathon.starks.core.weka.classifiers;
 
-import barclays.hackathon.starks.core.weka.Recommendation;
+import barclays.hackathon.starks.core.weka.vo.Recommendation;
 import weka.core.Instance;
 
 /**
