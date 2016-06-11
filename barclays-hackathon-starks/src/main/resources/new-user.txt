@@ -1,9 +1,9 @@
 @relation customer
 
-@attribute offer{Arrival,Carnival,JetBlue,Apple}
 @attribute moments {Marriage, Birthday}
 @attribute ageGroup {AGE_RANGE_17_25,AGE_RANGE_25_35,AGE_RANGE_35_PLUS}
 @attribute location {MT, NMT}
+@attribute offer{Arrival,Carnival,JetBlue,Apple}
 
 
 @data

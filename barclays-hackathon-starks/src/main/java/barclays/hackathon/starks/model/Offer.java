@@ -1,4 +1,4 @@
-package barclays.hackathon.starks.core;
+package barclays.hackathon.starks.model;
 
 public enum Offer {
 	Arrival5XT(0), Arrival5XR(1), Arrival5XO(2), Arrival5XDE(3), Carnival10XT(4), Carnival10XR(5), Carnival10XO(
