@@ -15,4 +15,13 @@ public enum Card {
 	}
 
 	private int index;
+
+	public static Card cardFrom(double classifyInstance) {
+		Card[] values = Card.values();
+		for (Card card : values) {
+			if (card.getIndex() == classifyInstance)
+				return card;
+		}
+		return null;
+	}
 }
