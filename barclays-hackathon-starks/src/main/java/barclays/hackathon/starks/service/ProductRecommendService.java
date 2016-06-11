@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Kaniska on 11-Jun-16.
+ * Created by Ashish Sanodia on 11-Jun-16.
  */
 @Service
 public class ProductRecommendService {

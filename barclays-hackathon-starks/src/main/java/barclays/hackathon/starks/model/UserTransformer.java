@@ -5,7 +5,7 @@ import org.springframework.social.facebook.api.User;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by Kaniska on 11-Jun-16.
+ * Created by Ashish Sanodia on 11-Jun-16.
  */
 @Component
 public class UserTransformer {

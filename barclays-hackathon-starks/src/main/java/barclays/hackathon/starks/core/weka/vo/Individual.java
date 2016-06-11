@@ -5,7 +5,7 @@ import barclays.hackathon.starks.model.LifeMoment;
 import java.util.List;
 
 /**
- * Created by Kaniska on 11-Jun-16.
+ * Created by Ashish Sanodia on 11-Jun-16.
  */
 public class Individual {
     private String name;
