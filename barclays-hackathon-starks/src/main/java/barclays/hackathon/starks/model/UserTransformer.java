@@ -1,5 +1,6 @@
 package barclays.hackathon.starks.model;
 
+import barclays.hackathon.starks.core.weka.vo.Individual;
 import org.springframework.social.facebook.api.User;
 import org.springframework.stereotype.Component;
 
@@ -8,8 +9,8 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class UserTransformer {
-    public UserData transform(User user) {
-        return new UserData(user.getFirstName(), user.getEmail(),
+    public Individual transform(User user) {
+        return new Individual(user.getFirstName(), user.getEmail(),
                 user.getLocation() == null ? "user-location" : user.getName(),
                 user.getBirthday(), user.getInterestedIn(), getLifeMoment(user));
     }

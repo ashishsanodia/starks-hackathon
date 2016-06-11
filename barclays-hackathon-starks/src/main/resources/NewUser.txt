@@ -1,0 +1,58 @@
+@relation customer
+
+@attribute offer{Arrival,Carnival,JetBlue,Apple}
+@attribute moments {Marriage, Birthday}
+@attribute ageGroup {AG1,AG2,AG3}
+@attribute location {MT, NMT}
+
+
+@data
+Marriage AG1 MT Arrival
+Marriage AG2 MT Arrival
+Marriage AG3 MT Carnival
+Marriage AG1 NMT Carnival
+Marriage AG2 NMT Carnival
+Marriage AG3 NMT JetBlue
+Birthday AG1 MT JetBlue
+Birthday AG2 MT Carnival
+Birthday AG3 MT JetBlue
+Birthday AG1 NMT JetBlue
+Birthday AG2 NMT Carnival
+Birthday AG3 NMT Apple
+Marriage AG1 MT Carnival
+Marriage AG2 MT Carnival
+Marriage AG1 MT Apple
+Marriage AG2 MT Apple
+Marriage AG3 MT Apple
+Marriage AG1 NMT Arrival
+Marriage AG2 NMT Arrival
+Marriage AG3 NMT Arrival
+Birthday AG1 MT Arrival
+Birthday AG2 MT Carnival
+Birthday AG3 MT Carnival
+Birthday AG1 NMT Apple
+Birthday AG2 NMT Carnival
+Birthday AG3 NMT Carnival
+Marriage AG1 MT Apple
+Apple Marriage AG2 MT Apple
+Apple Marriage AG3 MT Carnival
+Apple Marriage AG1 NMT Apple
+Apple Marriage AG2 NMT Apple
+Apple Marriage AG3 NMT Apple
+Apple Birthday AG1 MT Carnival
+Apple Birthday AG2 MT Apple
+Apple Birthday AG3 MT Apple
+Apple Birthday AG1 NMT Apple
+Apple Birthday AG2 NMT Carnival
+Apple Birthday AG3 NMT Carnival
+Carnival Marriage AG3 MT Carnival
+Carnival Marriage AG1 NMT Carnival
+Carnival Marriage AG2 NMT Apple
+Carnival Marriage AG3 NMT Carnival
+Carnival Birthday AG1 MT Carnival
+Carnival Birthday AG2 MT Carnival
+Carnival Birthday AG3 MT Carnival
+Carnival Birthday AG1 NMT Apple
+Carnival Birthday AG2 NMT Arrival
+Carnival Birthday AG3 NMT Arrival
+

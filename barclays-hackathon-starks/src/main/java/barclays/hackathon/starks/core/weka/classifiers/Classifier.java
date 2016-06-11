@@ -7,5 +7,5 @@ import weka.core.Instance;
  * Created by Bajrang on 6/11/2016.
  */
 public interface Classifier {
-    Recommendation classify(Instance instanceToClassify);
+    Recommendation classify(Instance instanceToClassify) throws Exception;
 }

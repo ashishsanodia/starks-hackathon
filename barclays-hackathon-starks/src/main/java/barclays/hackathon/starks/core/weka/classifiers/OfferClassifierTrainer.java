@@ -14,30 +14,33 @@ import java.io.IOException;
  * Created by Bajrang on 6/11/2016.
  */
 @Component
-public class OfferClassifierLearner {
-    private NaiveBayesUpdateable naiveBayesUpdateable;
+public class OfferClassifierTrainer {
     private ArffLoader arffLoader;
 
     @Autowired
-    public OfferClassifierLearner(NaiveBayesUpdateable naiveBayesUpdateable, ArffLoader arffLoader) {
-        this.naiveBayesUpdateable = naiveBayesUpdateable;
+    public OfferClassifierTrainer(ArffLoader arffLoader) {
         this.arffLoader = arffLoader;
     }
 
-    public void learnFromTrainingData() {
+    public NaiveBayesUpdateable trainClassifierAlgorithm(NaiveBayesUpdateable classificationAlgorithm) {
         try {
             arffLoader.setFile(ResourceUtils.getFile("existing-user.txt"));
             Instances instances = arffLoader.getStructure();
             instances.setClassIndex(instances.numAttributes() - 1);
-            naiveBayesUpdateable.buildClassifier(instances);
-            Instance current;
-            while ((current = arffLoader.getNextInstance(instances)) != null) {
-                naiveBayesUpdateable.updateClassifier(current);
-            }
+            classificationAlgorithm.buildClassifier(instances);
+            updateClassifier(classificationAlgorithm, instances);
         } catch (IOException e) {
             System.err.println("training data not found");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.err.println("classification engine failed to learn training data");
+        }
+        return classificationAlgorithm;
+    }
+
+    private void updateClassifier(NaiveBayesUpdateable classificationAlgorithm, Instances instances) throws Exception {
+        Instance current;
+        while ((current = arffLoader.getNextInstance(instances)) != null) {
+            classificationAlgorithm.updateClassifier(current);
         }
     }
 }
