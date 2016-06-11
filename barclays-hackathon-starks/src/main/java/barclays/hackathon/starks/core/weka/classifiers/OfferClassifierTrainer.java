@@ -43,4 +43,10 @@ public class OfferClassifierTrainer {
             classificationAlgorithm.updateClassifier(current);
         }
     }
+
+    public Instances getDataSchema() throws IOException {
+        arffLoader.setFile(ResourceUtils.getFile("existing-user.txt"));
+        Instances instances = arffLoader.getStructure();
+        return instances.stringFreeStructure();
+    }
 }

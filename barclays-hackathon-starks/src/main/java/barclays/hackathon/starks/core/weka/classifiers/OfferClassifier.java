@@ -1,10 +1,11 @@
 package barclays.hackathon.starks.core.weka.classifiers;
 
+import barclays.hackathon.starks.core.weka.vo.Individual;
+import barclays.hackathon.starks.core.weka.vo.InstanceBuilder;
 import barclays.hackathon.starks.core.weka.vo.Recommendation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import weka.classifiers.bayes.NaiveBayesUpdateable;
-import weka.core.Instance;
 
 /**
  * Created by Bajrang on 6/11/2016.
@@ -21,9 +22,11 @@ public class OfferClassifier implements Classifier {
     }
 
     @Override
-    public Recommendation classify(Instance instanceToClassify) throws Exception {
+    public Recommendation classify(Individual individual) throws Exception {
         NaiveBayesUpdateable trainedNaiveBayesAlgorithm = trainer.trainClassifierAlgorithm(naiveBayesUpdateable);
-        double classifyInstance = trainedNaiveBayesAlgorithm.classifyInstance(instanceToClassify);
+        InstanceBuilder.from(trainer.getDataSchema(), individual);
+        double classifyInstance = trainedNaiveBayesAlgorithm.classifyInstance(InstanceBuilder.from(trainer.getDataSchema(), individual));
+        //map to offer
         return null;
     }
 }

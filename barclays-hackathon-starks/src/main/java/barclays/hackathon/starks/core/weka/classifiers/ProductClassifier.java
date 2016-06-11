@@ -1,5 +1,6 @@
 package barclays.hackathon.starks.core.weka.classifiers;
 
+import barclays.hackathon.starks.core.weka.vo.Individual;
 import barclays.hackathon.starks.core.weka.vo.Recommendation;
 import org.springframework.stereotype.Component;
 import weka.core.Instance;
@@ -10,7 +11,7 @@ import weka.core.Instance;
 @Component
 public class ProductClassifier implements Classifier {
     @Override
-    public Recommendation classify(Instance instanceToClassify) {
+    public Recommendation classify(Individual individual) {
         return null;
     }
 }

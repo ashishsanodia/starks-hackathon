@@ -14,7 +14,9 @@ public class Individual {
     private String dob;
     private List<String> interestedIn;
     private LifeMoment lifemoment;
-   // private AgeGroup ageGroup;
+    // private AgeGroup ageGroup;
+    //isCustomer
+    //customerCurrentCard enum
 
     public Individual(String name, String email, String location, String dob, List<String> interestedIn, LifeMoment lifemoment) {
         this.name = name;
