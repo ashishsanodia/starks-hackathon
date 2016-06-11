@@ -1,5 +1,6 @@
 package barclays.hackathon.starks.core.weka.classifiers;
 
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ResourceUtils;
 import weka.classifiers.bayes.NaiveBayesUpdateable;
@@ -8,6 +9,7 @@ import weka.core.Instances;
 import weka.core.converters.ArffLoader;
 
 import java.io.IOException;
+import java.nio.file.Paths;
 
 /**
  * Created by Bajrang on 6/11/2016.
@@ -21,7 +23,7 @@ public class ProductClassifierTrainer {
     }
     public NaiveBayesUpdateable trainClassifierAlgorithm(NaiveBayesUpdateable classificationAlgorithm) {
         try {
-            arffLoader.setFile(ResourceUtils.getFile("new-user.txt"));
+            arffLoader.setFile(new ClassPathResource("new-user.txt").getFile());
             Instances instances = arffLoader.getStructure();
             instances.setClassIndex(instances.numAttributes() - 1);
             classificationAlgorithm.buildClassifier(instances);
@@ -42,7 +44,7 @@ public class ProductClassifierTrainer {
     }
 
     public Instances getDataSchema() throws IOException {
-        arffLoader.setFile(ResourceUtils.getFile("new-user.txt"));
+        arffLoader.setFile(new ClassPathResource("new-user.txt").getFile());
         Instances instances = arffLoader.getStructure();
         return instances.stringFreeStructure();
     }

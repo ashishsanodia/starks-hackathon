@@ -1,5 +1,6 @@
 package barclays.hackathon.starks.core.weka.builders;
 
+import barclays.hackathon.starks.model.Offer;
 import barclays.hackathon.starks.model.User;
 import weka.core.Attribute;
 import weka.core.Instance;
@@ -13,7 +14,7 @@ public class InstanceBuilder {
 
 		// map different attribute to data schema
 		Instances testInstance = dataSchema.stringFreeStructure();
-		Instance instance = new Instance(4);
+		Instance instance = new Instance(5);
 		
 		Attribute currentCard = testInstance.attribute(0);
 		instance.setValue(currentCard, user.getCard().getIndex());
@@ -27,8 +28,8 @@ public class InstanceBuilder {
 		Attribute location = testInstance.attribute(3);
 		instance.setValue(location, user.getLocation().getIndex());
 
-//		Attribute offer = testInstance.attribute(4);
-//		instance.setValue(offer, null);
+		Attribute offer = testInstance.attribute(4);
+		instance.setValue(offer, Offer.Apple10XR.getIndex());
 
 		instance.setDataset(testInstance);
 
@@ -39,7 +40,7 @@ public class InstanceBuilder {
 
 		// map different attribute to data schema
 		Instances testInstance = dataSchema.stringFreeStructure();
-		Instance instance = new Instance(3);
+		Instance instance = new Instance(4);
 		
 		Attribute moments = testInstance.attribute(0);
 		instance.setValue(moments, user.getLifemoment().getIndex());
@@ -50,8 +51,8 @@ public class InstanceBuilder {
 		Attribute location = testInstance.attribute(2);
 		instance.setValue(location, user.getLocation().getIndex());
 
-//		Attribute offer = testInstance.attribute(3);
-//		instance.setValue(offer, null);
+		Attribute offer = testInstance.attribute(3);
+		instance.setValue(offer, Offer.Apple10XR.getIndex());
 
 		instance.setDataset(testInstance);
 
