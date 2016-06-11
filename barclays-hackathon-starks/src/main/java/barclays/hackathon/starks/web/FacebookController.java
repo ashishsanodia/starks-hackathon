@@ -1,6 +1,5 @@
 package barclays.hackathon.starks.web;
 
-import barclays.hackathon.starks.service.ProductRecommendService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,13 +21,11 @@ public class FacebookController {
 
     private Facebook facebook;
     private ConnectionRepository repository;
-    private ProductRecommendService service;
 
     @Autowired
-    public FacebookController(Facebook facebook, ConnectionRepository repository, ProductRecommendService service) {
+    public FacebookController(Facebook facebook, ConnectionRepository repository) {
         this.facebook = facebook;
         this.repository = repository;
-        this.service = service;
     }
 
     @RequestMapping(method = RequestMethod.GET)
