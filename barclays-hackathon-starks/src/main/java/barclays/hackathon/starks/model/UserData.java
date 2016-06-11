@@ -3,7 +3,7 @@ package barclays.hackathon.starks.model;
 import java.util.List;
 
 /**
- * Created by Kaniska on 11-Jun-16.
+ * Created by Ashish Sanodia on 11-Jun-16.
  */
 public class UserData {
     private String name;
