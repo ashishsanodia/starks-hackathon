@@ -18,8 +18,8 @@ import java.nio.file.Paths;
 public class ProductClassifierTrainer {
     private ArffLoader arffLoader;
 
-    public ProductClassifierTrainer(ArffLoader arffLoader) {
-        this.arffLoader = arffLoader;
+    public ProductClassifierTrainer() {
+        this.arffLoader = new ArffLoader();
     }
     public NaiveBayesUpdateable trainClassifierAlgorithm(NaiveBayesUpdateable classificationAlgorithm) {
         try {
@@ -46,6 +46,7 @@ public class ProductClassifierTrainer {
     public Instances getDataSchema() throws IOException {
         arffLoader.setFile(new ClassPathResource("new-user.txt").getFile());
         Instances instances = arffLoader.getStructure();
+        instances.setClassIndex(instances.numAttributes() - 1);
         return instances.stringFreeStructure();
     }
 }

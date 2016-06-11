@@ -15,9 +15,4 @@ public class WekaConfiguration {
         return new NaiveBayesUpdateable();
     }
 
-    @Bean
-    public ArffLoader arffLoader() {
-        return new ArffLoader();
-    }
-
 }

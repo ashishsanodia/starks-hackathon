@@ -1,31 +1,31 @@
 package barclays.hackathon.starks.core.weka.classifiers;
 
-import java.io.IOException;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ResourceUtils;
-
 import weka.classifiers.bayes.NaiveBayesUpdateable;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.ArffLoader;
+
+import java.io.IOException;
 
 /**
  * Created by Bajrang on 6/11/2016.
  */
 @Component
 public class OfferClassifierTrainer {
+    public static final String EXISTING_USERS_TXT = "existing-users.txt";
     private ArffLoader arffLoader;
 
-    @Autowired
-    public OfferClassifierTrainer(ArffLoader arffLoader) {
-        this.arffLoader = arffLoader;
+    public OfferClassifierTrainer() {
+        this.arffLoader = new ArffLoader();
     }
 
     public NaiveBayesUpdateable trainClassifierAlgorithm(NaiveBayesUpdateable classificationAlgorithm) {
         try {
-            arffLoader.setFile(ResourceUtils.getFile("existing-user.txt"));
+            arffLoader.setFile(new ClassPathResource(EXISTING_USERS_TXT).getFile());
             Instances instances = arffLoader.getStructure();
             instances.setClassIndex(instances.numAttributes() - 1);
             classificationAlgorithm.buildClassifier(instances);
@@ -46,8 +46,9 @@ public class OfferClassifierTrainer {
     }
 
     public Instances getDataSchema() throws IOException {
-        arffLoader.setFile(ResourceUtils.getFile("existing-user.txt"));
+        arffLoader.setFile(new ClassPathResource(EXISTING_USERS_TXT).getFile());
         Instances instances = arffLoader.getStructure();
+        instances.setClassIndex(instances.numAttributes() - 1);
         return instances.stringFreeStructure();
     }
 }

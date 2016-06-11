@@ -7,7 +7,16 @@ public class UserOffer {
     private String userName;
     private String offer;
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getOffer() {
+        return offer;
+    }
+
     @SuppressWarnings("unused")
+
     private UserOffer() {
 
     }

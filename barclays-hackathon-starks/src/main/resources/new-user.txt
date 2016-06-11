@@ -1,4 +1,4 @@
-@relation customer
+@relation newuser
 
 @attribute moments {Marriage, Birthday}
 @attribute ageGroup {AGE_RANGE_17_25,AGE_RANGE_25_35,AGE_RANGE_35_PLUS}
@@ -55,4 +55,3 @@ Carnival Birthday AGE_RANGE_35_PLUS MT Carnival
 Carnival Birthday AGE_RANGE_17_25 NMT Apple
 Carnival Birthday AGE_RANGE_25_35 NMT Arrival
 Carnival Birthday AGE_RANGE_35_PLUS NMT Arrival
-
