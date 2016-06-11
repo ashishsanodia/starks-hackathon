@@ -1,7 +1,7 @@
 package barclays.hackathon.starks.service;
 
 import barclays.hackathon.starks.model.ProductRecommended;
-import barclays.hackathon.starks.model.UserData;
+import barclays.hackathon.starks.core.weka.vo.Individual;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public class ProductRecommendService {
 
-    public List<ProductRecommended> getRecommendation(UserData userData) {
+    public List<ProductRecommended> getRecommendation(Individual individual) {
         List<ProductRecommended> recommendedProducts = new ArrayList<ProductRecommended>();
         recommendedProducts.add(new ProductRecommended("product-id-1", "product-id-1-description", "product-id-1-image-url"));
         recommendedProducts.add(new ProductRecommended("product-id-2", "product-id-2-description", "product-id-2-image-url"));
