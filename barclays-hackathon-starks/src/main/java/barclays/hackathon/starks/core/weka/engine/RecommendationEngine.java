@@ -1,11 +1,12 @@
 package barclays.hackathon.starks.core.weka.engine;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import barclays.hackathon.starks.core.weka.classifiers.Classifier;
 import barclays.hackathon.starks.core.weka.classifiers.ClassifierFactory;
 import barclays.hackathon.starks.core.weka.vo.Recommendation;
 import barclays.hackathon.starks.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 /**
  * Created by Bajrang on 6/11/2016.
