@@ -1,6 +1,6 @@
 package barclays.hackathon.starks.core.weka.classifiers;
 
-import barclays.hackathon.starks.core.weka.vo.InstanceBuilder;
+import barclays.hackathon.starks.core.weka.builders.InstanceBuilder;
 import barclays.hackathon.starks.core.weka.vo.Recommendation;
 import barclays.hackathon.starks.core.weka.vo.User;
 import barclays.hackathon.starks.model.Offer;

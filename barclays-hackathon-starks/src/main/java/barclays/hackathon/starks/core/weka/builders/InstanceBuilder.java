@@ -1,5 +1,6 @@
-package barclays.hackathon.starks.core.weka.vo;
+package barclays.hackathon.starks.core.weka.builders;
 
+import barclays.hackathon.starks.core.weka.vo.User;
 import barclays.hackathon.starks.model.Card;
 import barclays.hackathon.starks.model.LifeMoment;
 import weka.core.Attribute;
