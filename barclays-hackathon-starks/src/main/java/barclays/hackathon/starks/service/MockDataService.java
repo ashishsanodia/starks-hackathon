@@ -1,10 +1,11 @@
 package barclays.hackathon.starks.service;
 
+import barclays.hackathon.starks.model.AgeRange;
 import barclays.hackathon.starks.model.User;
 import org.joda.time.LocalDate;
 import org.springframework.stereotype.Component;
 
-import static barclays.hackathon.starks.model.AgeGroup.AGE_RANGE_25_35;
+import static barclays.hackathon.starks.model.AgeRange.AGE_RANGE_25_35;
 import static barclays.hackathon.starks.model.UserLocation.METRO;
 import static barclays.hackathon.starks.model.Card.Arrival;
 import static barclays.hackathon.starks.model.LifeMoment.MARRIAGE;
