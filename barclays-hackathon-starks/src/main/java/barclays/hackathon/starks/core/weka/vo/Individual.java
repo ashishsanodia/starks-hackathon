@@ -23,6 +23,8 @@ public class Individual {
     private String interestedIn;
     private LifeMoment lifemoment;
     private AgeGroup ageGroup;
+    //isCustomer
+    //customerCurrentCard enum
 
     public Individual() {
     }
@@ -77,5 +79,9 @@ public class Individual {
                 ", lifemoment=" + lifemoment +
                 ", ageGroup=" + ageGroup +
                 '}';
+    }
+
+    public boolean isExistingCustomer() {
+        return false;
     }
 }
