@@ -4,7 +4,7 @@ import barclays.hackathon.starks.core.weka.vo.User;
 import org.springframework.data.repository.CrudRepository;
 
 /**
- * Created by Kaniska on 11-Jun-16.
+ * Created by Ashish Sanodia on 11-Jun-16.
  */
 public interface IndividualRepository  extends CrudRepository<User, Long> {
     User findByEmail(String email);
