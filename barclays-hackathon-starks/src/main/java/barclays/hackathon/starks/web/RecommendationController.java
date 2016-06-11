@@ -32,4 +32,9 @@ public class RecommendationController {
         Recommendation recommendation = recommendationEngine.recommendation(mockUserData);
         return ResponseEntity.<UserOffer>accepted().body(UserOffer.from(mockUserData.getName(), recommendation.getRecommendation()));
     }
+
+    @RequestMapping("/version")
+    public ResponseEntity<String> version() {
+        return ResponseEntity.ok().body("MLR 1.0");
+    }
 }
