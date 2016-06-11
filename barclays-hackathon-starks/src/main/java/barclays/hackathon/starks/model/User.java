@@ -1,8 +1,6 @@
-package barclays.hackathon.starks.core.weka.vo;
+package barclays.hackathon.starks.model;
 
 
-import barclays.hackathon.starks.model.Card;
-import barclays.hackathon.starks.model.LifeMoment;
 import org.joda.time.LocalDate;
 
 /**
@@ -16,7 +14,7 @@ public class User {
     private LocalDate dob;
     private String interestedIn;
     private LifeMoment lifemoment;
-    private AgeGroup ageGroup;
+    private AgeRange ageRange;
     private Card card;
 	private boolean isExistingCustomer;
 
@@ -27,7 +25,7 @@ public class User {
                 LocalDate dob,
                 String interestedIn,
                 LifeMoment lifemoment,
-                AgeGroup ageGroup,
+                AgeRange ageRange,
                 Card card) {
         this.id = id;
         this.name = name;
@@ -36,7 +34,7 @@ public class User {
         this.dob = dob;
         this.interestedIn = interestedIn;
         this.lifemoment = lifemoment;
-        this.ageGroup = ageGroup;
+        this.ageRange = ageRange;
         this.card = card;
     }
 
@@ -68,8 +66,8 @@ public class User {
         return lifemoment;
     }
 
-    public AgeGroup getAgeGroup() {
-        return ageGroup;
+    public AgeRange getAgeRange() {
+        return ageRange;
     }
 
     public Card getCard() {

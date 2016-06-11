@@ -1,7 +1,7 @@
 package barclays.hackathon.starks.service;
 
 import barclays.hackathon.starks.model.ProductRecommended;
-import barclays.hackathon.starks.core.weka.vo.User;
+import barclays.hackathon.starks.model.User;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

@@ -1,8 +1,6 @@
 package barclays.hackathon.starks.core.weka.builders;
 
-import barclays.hackathon.starks.core.weka.vo.User;
-import barclays.hackathon.starks.model.Card;
-import barclays.hackathon.starks.model.LifeMoment;
+import barclays.hackathon.starks.model.User;
 import weka.core.Attribute;
 import weka.core.Instance;
 import weka.core.Instances;
@@ -20,12 +18,11 @@ public class InstanceBuilder {
 		Attribute currentCard = testInstance.attribute(0);
 		instance.setValue(currentCard, user.getCard().getIndex());
 
-		
 		Attribute moments = testInstance.attribute(1);
 		instance.setValue(moments, user.getLifemoment().getIndex());
 		
-		Attribute ageGroup = testInstance.attribute(2);
-		instance.setValue(ageGroup, user.getLifemoment().getIndex());
+		Attribute ageRange = testInstance.attribute(2);
+		instance.setValue(ageRange, user.getAgeRange().getIndex());
 
 		Attribute location = testInstance.attribute(3);
 		instance.setValue(location, user.getLocation().getIndex());
@@ -47,8 +44,8 @@ public class InstanceBuilder {
 		Attribute moments = testInstance.attribute(0);
 		instance.setValue(moments, user.getLifemoment().getIndex());
 		
-		Attribute ageGroup = testInstance.attribute(1);
-		instance.setValue(ageGroup, user.getLifemoment().getIndex());
+		Attribute ageRange = testInstance.attribute(1);
+		instance.setValue(ageRange, user.getAgeRange().getIndex());
 
 		Attribute location = testInstance.attribute(2);
 		instance.setValue(location, user.getLocation().getIndex());

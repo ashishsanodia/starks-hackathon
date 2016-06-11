@@ -1,4 +1,4 @@
-package barclays.hackathon.starks.core.weka.vo;
+package barclays.hackathon.starks.model;
 
 import com.google.common.collect.Maps;
 

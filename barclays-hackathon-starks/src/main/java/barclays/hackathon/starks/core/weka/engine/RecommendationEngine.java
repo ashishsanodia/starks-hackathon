@@ -1,9 +1,9 @@
-package barclays.hackathon.starks.core.weka;
+package barclays.hackathon.starks.core.weka.engine;
 
 import barclays.hackathon.starks.core.weka.classifiers.Classifier;
 import barclays.hackathon.starks.core.weka.classifiers.ClassifierFactory;
 import barclays.hackathon.starks.core.weka.vo.Recommendation;
-import barclays.hackathon.starks.core.weka.vo.User;
+import barclays.hackathon.starks.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
