@@ -1,9 +1,10 @@
 package barclays.hackathon.starks.web;
 
-import barclays.hackathon.starks.model.ProductRecommended;
-import barclays.hackathon.starks.service.ProductRecommendService;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import static org.springframework.http.HttpStatus.OK;
+import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.social.connect.ConnectionRepository;
@@ -15,10 +16,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import java.util.List;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
-import static org.springframework.http.HttpStatus.OK;
-import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
+import barclays.hackathon.starks.model.ProductRecommended;
+import barclays.hackathon.starks.service.ProductRecommendService;
 
 /**
  * Created by Ashish Sanodia on 11-Jun-16.

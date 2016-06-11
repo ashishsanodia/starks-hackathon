@@ -18,6 +18,7 @@ public class User {
     private LifeMoment lifemoment;
     private AgeGroup ageGroup;
     private Card card;
+	private boolean isExistingCustomer;
 
     public User(String id,
                 String name,
@@ -73,5 +74,13 @@ public class User {
 
     public Card getCard() {
         return card;
-    }
+    }	
+
+	public boolean isExistingCustomer() {
+		return isExistingCustomer;
+	}
+
+	public void setExistingCustomer(boolean isExistingCustomer) {
+		this.isExistingCustomer = isExistingCustomer;
+	}
 }

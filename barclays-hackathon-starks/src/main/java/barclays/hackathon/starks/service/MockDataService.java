@@ -15,18 +15,23 @@ import static barclays.hackathon.starks.model.LifeMoment.MARRIAGE;
 @Component
 public class MockDataService {
 
-    public User getMockUser(String email) {
-        if (email.contains("existing_user@mail")) {
-            return getMockDataForExistingUser();
-        }
-        return getMockDataForNewUser();
-    }
+	public User getMockUser(String email) {
+		if (email.contains("existing_user@mail")) {
+			return getMockDataForExistingUser();
+		}
+		return getMockDataForNewUser();
+	}
 
-    private User getMockDataForExistingUser() {
-        return new User("id-1", "Existing User", "existing_user@mail", METRO, new LocalDate(1988, 8, 29), "Travel", MARRIAGE, AGE_RANGE_25_35, Arrival);
-    }
+	private User getMockDataForExistingUser() {
+		User existingUser = new User("id-1", "Existing User", "existing_user@mail", METRO, new LocalDate(1988, 8, 29),
+				"Travel", MARRIAGE, AGE_RANGE_25_35, Arrival);
+		existingUser.setExistingCustomer(true);
+		
+		return existingUser;
+	}
 
-    private User getMockDataForNewUser() {
-        return new User("id-1", "New User", "new_user@gmail.com", METRO, new LocalDate(1988, 8, 29), "Travel", MARRIAGE, AGE_RANGE_25_35, null);
-    }
+	private User getMockDataForNewUser() {
+		return new User("id-1", "New User", "new_user@gmail.com", METRO, new LocalDate(1988, 8, 29), "Travel", MARRIAGE,
+				AGE_RANGE_25_35, null);
+	}
 }
