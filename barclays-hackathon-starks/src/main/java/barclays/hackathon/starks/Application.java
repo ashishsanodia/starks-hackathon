@@ -2,6 +2,7 @@ package barclays.hackathon.starks;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
@@ -21,36 +22,14 @@ public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class);
     }
-//
-//    @Bean
-//    public CommandLineRunner demo(final IndividualRepository repository) {
-//        return new CommandLineRunner() {
-//            @Override
-//            public void run(String... strings) throws Exception {
-//
-//                repository.save(new Individual("Jack", "Bauer", null, null, null, null, null));
-//
-//                // fetch all customers
-//                log.info("Customers found with findAll():");
-//                log.info("-------------------------------");
-//                for (Individual customer : repository.findAll()) {
-//                }
-//                log.info("");
-//
-//                // fetch an individual customer by ID
-//                Individual customer = repository.findOne(1L);
-//                log.info("Customer found with findOne(1L):");
-//                log.info("--------------------------------");
-//                log.info(customer.toString());
-//                log.info("");
-//
-//                // fetch customers by last name
-//                log.info("Customer found with findByLastName('Bauer'):");
-//                log.info("--------------------------------------------");
-//                log.info(repository.findByEmail("Bauer").toString());
-//                log.info("");
-//            }
-//        };
-//
-//    }
+
+    //    @Bean
+    public CommandLineRunner demo() {
+        return new CommandLineRunner() {
+            @Override
+            public void run(String... strings) throws Exception {
+                log.info("");
+            }
+        };
+    }
 }
