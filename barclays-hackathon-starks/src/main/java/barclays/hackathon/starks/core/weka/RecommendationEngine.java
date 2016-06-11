@@ -12,15 +12,15 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class RecommendationEngine {
-    private ClassifierFactory classifierFactory;
+	private ClassifierFactory classifierFactory;
 
-    @Autowired
-    public RecommendationEngine(ClassifierFactory classifierFactory) {
-        this.classifierFactory = classifierFactory;
-    }
+	@Autowired
+	public RecommendationEngine(ClassifierFactory classifierFactory) {
+		this.classifierFactory = classifierFactory;
+	}
 
-    public Recommendation recommendation(User individual) throws Exception {
-        Classifier classifier = classifierFactory.getClassifier(individual.isExistingCustomer());
-        return classifier.classify(individual);
-    }
+	public Recommendation recommendation(User individual) throws Exception {
+		Classifier classifier = classifierFactory.getClassifier(individual.isExistingCustomer());
+		return classifier.classify(individual);
+	}
 }

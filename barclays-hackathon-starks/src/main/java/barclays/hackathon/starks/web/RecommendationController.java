@@ -30,6 +30,6 @@ public class RecommendationController {
     public ResponseEntity<UserOffer> getRecommendation(@PathVariable String email) throws Exception {
         User mockUserData = mockDataService.getMockUser(email);
         Recommendation recommendation = recommendationEngine.recommendation(mockUserData);
-        return ResponseEntity.<UserOffer>accepted().body(UserOffer.from(mockUserData.getName(), recommendation.getRecommendation()));
+        return ResponseEntity.accepted().body(UserOffer.from(mockUserData.getName(), recommendation.getRecommendation()));
     }
 }
