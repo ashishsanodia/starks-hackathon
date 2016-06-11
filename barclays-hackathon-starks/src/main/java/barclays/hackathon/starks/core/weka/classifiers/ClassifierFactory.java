@@ -1,5 +1,6 @@
 package barclays.hackathon.starks.core.weka.classifiers;
 
+import barclays.hackathon.starks.core.weka.OfferClassifier;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
