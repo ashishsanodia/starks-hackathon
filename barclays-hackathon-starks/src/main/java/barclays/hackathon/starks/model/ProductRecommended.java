@@ -1,4 +1,4 @@
-package barclays.hackathon.starks.controller.model;
+package barclays.hackathon.starks.model;
 
 /**
  * Created by Kaniska on 11-Jun-16.

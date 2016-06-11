@@ -1,7 +1,7 @@
-package barclays.hackathon.starks.controller.service;
+package barclays.hackathon.starks.service;
 
-import barclays.hackathon.starks.controller.model.ProductRecommended;
-import barclays.hackathon.starks.controller.model.UserData;
+import barclays.hackathon.starks.model.ProductRecommended;
+import barclays.hackathon.starks.model.UserData;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

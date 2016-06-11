@@ -1,6 +1,5 @@
-package barclays.hackathon.starks.controller.model;
+package barclays.hackathon.starks.model;
 
-import java.util.Date;
 import java.util.List;
 
 /**

@@ -1,9 +1,9 @@
-package barclays.hackathon.starks.controller.web;
+package barclays.hackathon.starks.web;
 
-import barclays.hackathon.starks.controller.model.ProductRecommended;
-import barclays.hackathon.starks.controller.model.UserData;
-import barclays.hackathon.starks.controller.model.UserTransformer;
-import barclays.hackathon.starks.controller.service.ProductRecommendService;
+import barclays.hackathon.starks.model.ProductRecommended;
+import barclays.hackathon.starks.model.UserData;
+import barclays.hackathon.starks.model.UserTransformer;
+import barclays.hackathon.starks.service.ProductRecommendService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;

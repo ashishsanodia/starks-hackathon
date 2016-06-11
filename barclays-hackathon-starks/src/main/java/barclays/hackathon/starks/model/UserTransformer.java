@@ -1,4 +1,4 @@
-package barclays.hackathon.starks.controller.model;
+package barclays.hackathon.starks.model;
 
 import org.springframework.social.facebook.api.User;
 import org.springframework.stereotype.Component;
