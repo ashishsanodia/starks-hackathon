@@ -3,10 +3,10 @@ package barclays.hackathon.starks.core.weka.classifiers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import barclays.hackathon.starks.core.Offer;
-import barclays.hackathon.starks.core.weka.vo.Individual;
+import barclays.hackathon.starks.core.weka.vo.User;
 import barclays.hackathon.starks.core.weka.vo.InstanceBuilder;
 import barclays.hackathon.starks.core.weka.vo.Recommendation;
+import barclays.hackathon.starks.model.Offer;
 import weka.classifiers.bayes.NaiveBayesUpdateable;
 
 /**
@@ -24,9 +24,9 @@ public class OfferClassifier implements Classifier {
 	}
 
 	@Override
-	public Recommendation classify(Individual individual) throws Exception {
+	public Recommendation classify(User individual) throws Exception {
 		NaiveBayesUpdateable trainedNaiveBayesAlgorithm = trainer.trainClassifierAlgorithm(naiveBayesUpdateable);
-		InstanceBuilder.from(trainer.getDataSchema(), individual);
+		InstanceBuilder.existingUser(trainer.getDataSchema(), individual);
 		double offer = trainedNaiveBayesAlgorithm
 				.classifyInstance(InstanceBuilder.from(trainer.getDataSchema(), individual));
 		return Recommendation.forOffer(Offer.fromOffer(offer).name());

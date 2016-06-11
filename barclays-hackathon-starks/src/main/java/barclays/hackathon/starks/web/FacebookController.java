@@ -1,7 +1,7 @@
 package barclays.hackathon.starks.web;
 
 import barclays.hackathon.starks.model.ProductRecommended;
-import barclays.hackathon.starks.core.weka.vo.Individual;
+import barclays.hackathon.starks.core.weka.vo.User;
 import barclays.hackathon.starks.model.UserTransformer;
 import barclays.hackathon.starks.service.ProductRecommendService;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -70,7 +70,7 @@ public class FacebookController {
     }
 
     private List<ProductRecommended> getProductRecommendations(User user) {
-        Individual transformedIndividual = userTransformer.transform(user);
+        User transformedIndividual = userTransformer.transform(user);
 
         return service.getRecommendation(transformedIndividual);
     }

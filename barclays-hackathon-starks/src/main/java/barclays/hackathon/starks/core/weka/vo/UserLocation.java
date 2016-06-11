@@ -7,11 +7,12 @@ import java.util.Map;
 /**
  * Created by Kaniska on 11-Jun-16.
  */
-public enum IndividualLocation {
-    METRO,
-    NON_METRO;
+public enum UserLocation {
+    METRO(0),
+    NON_METRO(1);
 
     private static Map<String, String> cities = Maps.newHashMap();
+	private int index;
 
     static {
         cities.put("kolkata", null);
@@ -21,10 +22,17 @@ public enum IndividualLocation {
         cities.put("bangalore", null);
     }
 
-    public static IndividualLocation fromCity(String city) {
+    public static UserLocation fromCity(String city) {
         if (cities.containsKey(city.toLowerCase())) {
             return METRO;
         }
         return NON_METRO;
     }
+
+    private UserLocation(int index) {
+		this.index = index;
+	}
+	public int getIndex() {
+		return index;
+	}
 }

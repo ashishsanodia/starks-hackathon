@@ -1,8 +1,8 @@
 package barclays.hackathon.starks.model;
 
 import barclays.hackathon.starks.core.weka.vo.AgeGroup;
-import barclays.hackathon.starks.core.weka.vo.Individual;
-import barclays.hackathon.starks.core.weka.vo.IndividualLocation;
+import barclays.hackathon.starks.core.weka.vo.User;
+import barclays.hackathon.starks.core.weka.vo.UserLocation;
 import org.joda.time.LocalDate;
 import org.joda.time.Years;
 import org.joda.time.format.DateTimeFormat;
@@ -19,12 +19,12 @@ import static barclays.hackathon.starks.core.weka.vo.AgeGroup.*;
 public class UserTransformer {
     final DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-MMM-dd");
 
-    public Individual transform(User user) {
-        IndividualLocation location = computeCity(user);
+    public User transform(User user) {
+        UserLocation location = computeCity(user);
         AgeGroup ageGroup = computeAgeGroup(user);
         LocalDate birthday = formatter.parseLocalDate(user.getBirthday());
 
-        Individual individual = new Individual(
+        User individual = new User(
                 user.getFirstName(),
                 user.getEmail(),
                 location,
@@ -35,8 +35,8 @@ public class UserTransformer {
         return individual;
     }
 
-    private IndividualLocation computeCity(User user) {
-        return IndividualLocation.fromCity(user.getLocation().getName());
+    private UserLocation computeCity(User user) {
+        return UserLocation.fromCity(user.getLocation().getName());
     }
 
     private AgeGroup computeAgeGroup(User user) {

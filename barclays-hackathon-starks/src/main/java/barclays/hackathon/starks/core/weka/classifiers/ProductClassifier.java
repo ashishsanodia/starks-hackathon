@@ -1,6 +1,6 @@
 package barclays.hackathon.starks.core.weka.classifiers;
 
-import barclays.hackathon.starks.core.weka.vo.Individual;
+import barclays.hackathon.starks.core.weka.vo.User;
 import barclays.hackathon.starks.core.weka.vo.InstanceBuilder;
 import barclays.hackathon.starks.core.weka.vo.Recommendation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ public class ProductClassifier implements Classifier {
     }
 
     @Override
-    public Recommendation classify(Individual individual) throws Exception {
+    public Recommendation classify(User individual) throws Exception {
         NaiveBayesUpdateable trainedNaiveBayesAlgorithm = trainer.trainClassifierAlgorithm(naiveBayesUpdateable);
         InstanceBuilder.from(trainer.getDataSchema(), individual);
         double classifyInstance = trainedNaiveBayesAlgorithm.classifyInstance(InstanceBuilder.from(trainer.getDataSchema(), individual));
