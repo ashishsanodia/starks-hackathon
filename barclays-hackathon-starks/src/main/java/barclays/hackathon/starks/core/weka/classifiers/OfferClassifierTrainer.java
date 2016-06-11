@@ -1,14 +1,15 @@
 package barclays.hackathon.starks.core.weka.classifiers;
 
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ResourceUtils;
+
 import weka.classifiers.bayes.NaiveBayesUpdateable;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.ArffLoader;
-
-import java.io.IOException;
 
 /**
  * Created by Bajrang on 6/11/2016.
