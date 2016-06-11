@@ -1,9 +1,9 @@
 package barclays.hackathon.starks.core.weka.vo;
 
-import org.joda.time.LocalDate;
 
 import barclays.hackathon.starks.model.Card;
 import barclays.hackathon.starks.model.LifeMoment;
+import org.joda.time.LocalDate;
 
 /**
  * Created by Ashish Sanodia on 11-Jun-16.
