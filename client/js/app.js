@@ -29,6 +29,7 @@ app.config(['$routeProvider',
         vm.login = login;
         function login() {
             $rootScope.isLoggedIn = true;
+            $rootScope.email=vm.email;
             $location.path('offer');
         }
     }
@@ -39,7 +40,7 @@ app.config(['$routeProvider',
     angular
         .module('app')
         .controller('FrontController', FrontController);
-    LoginController.$inject = ['$rootScope'];
+    FrontController.$inject = ['$rootScope'];
     function FrontController($rootScope) {
         $rootScope.isLoggedIn = false;
     }
@@ -52,7 +53,7 @@ app.config(['$routeProvider',
         .controller('OfferController', OfferController);
     OfferController.$inject = ['$rootScope', '$http'];
     function OfferController($http) {
-        $http.get(url)
+        $http.get('http://localhost:8080/version')
             .success(function (res) {
             })
             .error(function (res) {

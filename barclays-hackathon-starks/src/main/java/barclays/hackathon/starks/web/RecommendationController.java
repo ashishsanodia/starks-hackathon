@@ -1,8 +1,8 @@
 package barclays.hackathon.starks.web;
 
-import barclays.hackathon.starks.core.weka.RecommendationEngine;
+import barclays.hackathon.starks.core.weka.engine.RecommendationEngine;
 import barclays.hackathon.starks.core.weka.vo.Recommendation;
-import barclays.hackathon.starks.core.weka.vo.User;
+import barclays.hackathon.starks.model.User;
 import barclays.hackathon.starks.service.MockDataService;
 import barclays.hackathon.starks.web.vo.UserOffer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +30,11 @@ public class RecommendationController {
     public ResponseEntity<UserOffer> getRecommendation(@PathVariable String email) throws Exception {
         User mockUserData = mockDataService.getMockUser(email);
         Recommendation recommendation = recommendationEngine.recommendation(mockUserData);
-        return ResponseEntity.<UserOffer>accepted().body(UserOffer.from(mockUserData.getName(), recommendation.getRecommendation()));
+        return ResponseEntity.accepted().body(UserOffer.from(mockUserData.getName(), recommendation.getRecommendation()));
+    }
+
+    @RequestMapping("/version")
+    public ResponseEntity<String> version() {
+        return ResponseEntity.ok().body("MLR 1.0");
     }
 }
