@@ -1,7 +1,9 @@
 package barclays.hackathon.starks.core.weka;
 
-import barclays.hackathon.starks.core.weka.classifiers.OfferClassifier;
-import barclays.hackathon.starks.core.weka.classifiers.ProductClassifier;
+import barclays.hackathon.starks.core.weka.classifiers.Classifier;
+import barclays.hackathon.starks.core.weka.classifiers.ClassifierFactory;
+import barclays.hackathon.starks.core.weka.vo.Individual;
+import barclays.hackathon.starks.core.weka.vo.Recommendation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -10,13 +12,15 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class RecommendationEngine {
-    private OfferClassifier offerClassifier;
-    private ProductClassifier productClassifier;
+    private ClassifierFactory classifierFactory;
 
     @Autowired
-    public RecommendationEngine(OfferClassifier offerClassifier, ProductClassifier productClassifier) {
-        this.offerClassifier = offerClassifier;
-        this.productClassifier = productClassifier;
+    public RecommendationEngine(ClassifierFactory classifierFactory) {
+        this.classifierFactory = classifierFactory;
     }
 
+    public Recommendation recommendation(Individual individual) throws Exception {
+        Classifier classifier = classifierFactory.getClassifier(individual.isExistingCustomer());
+        return classifier.classify(individual);
+    }
 }

@@ -50,4 +50,8 @@ public class Individual {
     public LifeMoment getLifemoment() {
         return lifemoment;
     }
+
+    public boolean isExistingCustomer() {
+        return false;
+    }
 }
