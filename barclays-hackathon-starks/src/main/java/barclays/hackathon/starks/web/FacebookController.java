@@ -1,8 +1,6 @@
 package barclays.hackathon.starks.web;
 
 import barclays.hackathon.starks.model.ProductRecommended;
-import barclays.hackathon.starks.core.weka.vo.User;
-import barclays.hackathon.starks.model.UserTransformer;
 import barclays.hackathon.starks.service.ProductRecommendService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -32,14 +30,12 @@ public class FacebookController {
 
     private Facebook facebook;
     private ConnectionRepository repository;
-    private UserTransformer userTransformer;
     private ProductRecommendService service;
 
     @Autowired
-    public FacebookController(Facebook facebook, ConnectionRepository repository, UserTransformer userTransformer, ProductRecommendService service) {
+    public FacebookController(Facebook facebook, ConnectionRepository repository, ProductRecommendService service) {
         this.facebook = facebook;
         this.repository = repository;
-        this.userTransformer = userTransformer;
         this.service = service;
     }
 
@@ -70,8 +66,7 @@ public class FacebookController {
     }
 
     private List<ProductRecommended> getProductRecommendations(User user) {
-        User transformedIndividual = userTransformer.transform(user);
 
-        return service.getRecommendation(transformedIndividual);
+        return service.getRecommendation(null);
     }
 }
