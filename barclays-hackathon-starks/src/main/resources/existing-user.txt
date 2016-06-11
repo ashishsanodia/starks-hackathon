@@ -1,0 +1,18 @@
+@relation customer
+
+@attribute moments {M, B}
+@attribute ageGroup {AG1,AG2,AG3}
+@attribute location {MT, NMT}
+@attribute offer {BCA5XT, BCA5XM, BCB5XR}
+
+@data
+M AG2 MT BCA5XM
+M AG1 MT BCA5XT
+M AG2 MT BCA5XM
+M AG3 NMT BCA5XM
+M AG1 NMT BCA5XM
+B AG3 MT BCB5XR
+B AG3 NMT BCB5XR
+B AG2 NMT BCB5XR
+B AG1 NMT BCB5XR
+B AG1 MT BCB5XR
