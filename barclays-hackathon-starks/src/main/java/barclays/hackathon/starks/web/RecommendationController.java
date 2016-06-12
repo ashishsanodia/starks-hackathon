@@ -3,6 +3,7 @@ package barclays.hackathon.starks.web;
 import barclays.hackathon.starks.core.weka.engine.RecommendationEngine;
 import barclays.hackathon.starks.core.weka.vo.Recommendation;
 import barclays.hackathon.starks.model.User;
+import barclays.hackathon.starks.service.EmailService;
 import barclays.hackathon.starks.service.MockDataService;
 import barclays.hackathon.starks.web.vo.UserOffer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,18 +20,24 @@ public class RecommendationController {
 
     private RecommendationEngine recommendationEngine;
     private MockDataService mockDataService;
+    private EmailService emailService;
 
     @Autowired
-    public RecommendationController(RecommendationEngine recommendationEngine, MockDataService mockDataService) {
+    public RecommendationController(RecommendationEngine recommendationEngine, MockDataService mockDataService, EmailService emailService) {
         this.recommendationEngine = recommendationEngine;
         this.mockDataService = mockDataService;
+        this.emailService = emailService;
     }
 
     @RequestMapping(value = "/recommend/{email}")
     public ResponseEntity<UserOffer> getRecommendation(@PathVariable String email) throws Exception {
         User mockUserData = mockDataService.getMockUser(email);
         Recommendation recommendation = recommendationEngine.recommendation(mockUserData);
-        return ResponseEntity.accepted().body(UserOffer.from(mockUserData.getName(), recommendation.getRecommendation(), mockUserData.getLifemoment().name()));
+        UserOffer userOffer = UserOffer.from(mockUserData.getName(), recommendation.getRecommendation(),mockUserData.getLifemoment().name());
+        if(mockUserData.isExistingCustomer()){
+            emailService.sendMailTo(mockUserData, userOffer);
+        }
+        return ResponseEntity.accepted().body(userOffer);
     }
 
     @RequestMapping("/version")

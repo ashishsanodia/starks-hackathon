@@ -3,10 +3,15 @@ package barclays.hackathon.starks.model;
 
 import org.joda.time.LocalDate;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * Created by Ashish Sanodia on 11-Jun-16.
  */
+@Entity
 public class User {
+    @Id
     private String id;
     private String name;
     private String email;
@@ -64,6 +69,10 @@ public class User {
 
     public LifeMoment getLifemoment() {
         return lifemoment;
+    }
+
+    public void setLifemoment(LifeMoment lifemoment) {
+        this.lifemoment = lifemoment;
     }
 
     public AgeRange getAgeRange() {

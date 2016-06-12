@@ -1,11 +1,15 @@
 package barclays.hackathon.starks.web;
 
+import barclays.hackathon.starks.core.weka.engine.RecommendationEngine;
+import barclays.hackathon.starks.core.weka.vo.Recommendation;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.social.connect.ConnectionRepository;
 import org.springframework.social.facebook.api.Facebook;
+import org.springframework.social.facebook.api.PagedList;
+import org.springframework.social.facebook.api.Post;
 import org.springframework.social.facebook.api.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,10 +21,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 
 @Controller
-@RequestMapping("/recommend")
+@RequestMapping("/fb")
 public class FacebookController {
 
-    private static Logger LOG = Logger.getLogger(FacebookController.class);
     private Facebook facebook;
     private ConnectionRepository repository;
 
@@ -35,13 +38,21 @@ public class FacebookController {
         if (repository.findPrimaryConnection(Facebook.class) == null) {
             return "redirect:/connect/facebook";
         }
-        User user = facebook.userOperations().getUserProfile();
 
-        model.addAttribute("facebookProfile", user);
-
-        LOG.info(new ObjectMapper().writeValueAsString(user));
-
-        return "recommendedProducts";
+        model.addAttribute("facebookProfile", facebook.userOperations().getUserProfile());
+        PagedList<Post> feed = facebook.feedOperations().getFeed();
+        User userProfile = facebook.userOperations().getUserProfile();
+        System.out.println(new ObjectMapper().writeValueAsString(userProfile));
+        PagedList<User> friendProfiles = facebook.friendOperations().getFriendProfiles();
+        for (User friendProfile : friendProfiles) {
+            System.out.println(friendProfile.getName() + " ");
+            System.out.println(friendProfile.getEmail() + " ");
+            System.out.println(friendProfile.getAgeRange() + " ");
+            System.out.println(friendProfile.getAbout() + " ");
+            System.out.println(friendProfile + " ");
+            System.out.println("==========================");
+        }
+        model.addAttribute("feed", feed);
+        return "hello";
     }
-
 }
