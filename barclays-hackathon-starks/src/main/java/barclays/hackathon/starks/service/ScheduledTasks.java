@@ -31,7 +31,7 @@ public class ScheduledTasks {
         this.emailService = emailService;
     }
 
-    @Scheduled(cron = "*/20 * * * * *")
+    @Scheduled(cron = "* 1 * * * *")
     public void sendMailForBirthdayEvent() {
         LocalDate now = new LocalDate();
         LocalDate afterSevenDaysFromNow = now.plusDays(4);

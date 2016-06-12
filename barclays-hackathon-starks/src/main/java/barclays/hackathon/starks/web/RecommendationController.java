@@ -4,6 +4,7 @@ import barclays.hackathon.starks.core.weka.engine.RecommendationEngine;
 import barclays.hackathon.starks.core.weka.vo.Recommendation;
 import barclays.hackathon.starks.model.User;
 import barclays.hackathon.starks.service.EmailService;
+import barclays.hackathon.starks.service.EmailVariables;
 import barclays.hackathon.starks.service.MockDataService;
 import barclays.hackathon.starks.web.vo.UserOffer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,13 +35,23 @@ public class RecommendationController {
         User mockUserData = mockDataService.getMockUser(email);
         Recommendation recommendation = recommendationEngine.recommendation(mockUserData);
         UserOffer userOffer = UserOffer.from(mockUserData.getName(), recommendation.getRecommendation(),mockUserData.getLifemoment().name());
-        if(mockUserData.isExistingCustomer()){
-            emailService.sendMailTo(mockUserData, userOffer);
-        }
+//        if(mockUserData.isExistingCustomer()){
+//            emailService.sendMailTo(getEmailVariablesFrom(mockUserData), "");
+//        }
         return ResponseEntity.accepted().body(userOffer);
     }
 
     @RequestMapping("/version")
     public ResponseEntity<String> version() {
         return ResponseEntity.ok().body("MLR 1.0");
-    }}
+    }
+
+
+    private EmailVariables getEmailVariablesFrom(User user) {
+        EmailVariables emailVariables = new EmailVariables();
+        emailVariables.addNew(EmailVariables.Type.USER_NAME, user.getName());
+        emailVariables.addNew(EmailVariables.Type.USER_EMAIL, user.getEmail());
+        emailVariables.addNew(EmailVariables.Type.SUBJECT, "We have offer for you!!");
+        return emailVariables;
+    }
+}
