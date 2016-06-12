@@ -1,9 +1,10 @@
 package barclays.hackathon.starks.model;
 
 public enum Offer {
-	Arrival5XT(0), Arrival5XR(1), Arrival5XO(2), Arrival5XDE(3), Carnival10XT(4), Carnival10XR(5), Carnival10XO(
-			6), Carnival10XDE(7), JetBlue10XT(8), JetBlue2XR(9), JetBlue5XO(10), JetBlue3XDE(11), Apple2XT(
-					12), Apple10XR(13), Apple5XO(14), Apple1XDE(15);
+	JetBlue5XO(0),Apple5XDE(1),JetBlue5XT(2),Carnival5XR(3),Carnival5XT(4),Carnival5XO(5),Apple5XR(6),Apple5XT(7),
+	Apple5XO(8),Arrival5XT(9),Arrival5XR(10),Arrival5XO(11),JetBlue5XDE(12),Carnival5XDE(13),Arrival5XDE(14);
+
+
 
 	private int index;
 
