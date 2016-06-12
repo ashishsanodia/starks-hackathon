@@ -6,6 +6,23 @@ package barclays.hackathon.starks.web.vo;
 public class UserOffer {
     private String userName;
     private String offer;
+    private String moment;
+
+    @SuppressWarnings("unused")
+
+    private UserOffer() {
+
+    }
+
+    private UserOffer(String userName, String offer, String moment) {
+        this.userName = userName;
+        this.offer = offer;
+        this.moment = moment;
+    }
+
+    public static UserOffer from(String userName, String recommendation, String moment) {
+        return new UserOffer(userName, recommendation, moment);
+    }
 
     public String getUserName() {
         return userName;
@@ -15,18 +32,7 @@ public class UserOffer {
         return offer;
     }
 
-    @SuppressWarnings("unused")
-
-    private UserOffer() {
-
-    }
-
-    private UserOffer(String userName, String offer) {
-        this.userName = userName;
-        this.offer = offer;
-    }
-
-    public static UserOffer from(String userName, String recommendation) {
-        return new UserOffer(userName, recommendation);
+    public String getMoment() {
+        return moment;
     }
 }

@@ -23,13 +23,20 @@ app.config(['$routeProvider',
     angular
         .module('app')
         .controller('LoginController', LoginController);
-    LoginController.$inject = ['$rootScope', '$location'];
-    function LoginController($rootScope, $location) {
+    LoginController.$inject = ['$rootScope', '$location', '$http'];
+    function LoginController($rootScope, $location, $http) {
         var vm = this;
         vm.login = login;
         function login() {
             $rootScope.isLoggedIn = true;
-            $rootScope.email=vm.email;
+            $rootScope.email = vm.email;
+            $http.get('http://localhost:8080/recommend/' + vm.email)
+                .success(function (res) {
+                    $rootScope.offer = res;
+                })
+                .error(function (res) {
+                    console.log("error occurred " + res)
+                });
             $location.path('offer');
         }
     }
@@ -51,12 +58,7 @@ app.config(['$routeProvider',
     angular
         .module('app')
         .controller('OfferController', OfferController);
-    OfferController.$inject = ['$rootScope', '$http'];
-    function OfferController($http) {
-        $http.get('http://localhost:8080/version')
-            .success(function (res) {
-            })
-            .error(function (res) {
-            });
+    OfferController.$inject = ['$rootScope'];
+    function OfferController() {
     }
 })();
