@@ -64,8 +64,9 @@ app.config(['$routeProvider',
         var vm = this;
         vm.loadOfferImage = loadOfferImage;
         var map = {
-            "Arrival5XT": "5x reward point on travel",
-            "Arrival5XR": "5x reward point on all retail shops"
+            "Arrival5XT": "5x rewards point on all travel spends",
+            "Arrival5XR": "5x rewards point on all retail shops",
+            "Carnival5XDE":"5X rewards point on Dining and Entertainment spends"
         };
         vm.text = text;
 
