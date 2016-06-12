@@ -17,7 +17,7 @@ import weka.core.converters.ArffLoader;
  * Created by Bajrang on 6/11/2016.
  */
 public class ProductClassifierTrainer {
-	private static final Logger LOGGER = LoggerFactory.getLogger(OfferClassifierTrainer.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ProductClassifierTrainer.class);
 	private ArffLoader arffLoader;
 	private Instances instances;
 
