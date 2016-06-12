@@ -29,7 +29,7 @@ public class InstanceBuilder {
 		instance.setValue(location, user.getLocation().getIndex());
 
 		Attribute offer = testInstance.attribute(4);
-		instance.setValue(offer, Offer.Apple10XR.getIndex());
+		instance.setValue(offer, Offer.Apple5XDE.getIndex());
 
 		instance.setDataset(testInstance);
 
@@ -52,7 +52,7 @@ public class InstanceBuilder {
 		instance.setValue(location, user.getLocation().getIndex());
 
 		Attribute offer = testInstance.attribute(3);
-		instance.setValue(offer, Offer.Apple10XR.getIndex());
+		instance.setValue(offer, Offer.Apple5XR.getIndex());
 
 		instance.setDataset(testInstance);
 

@@ -63,8 +63,10 @@ app.config(['$routeProvider',
     function OfferController($rootScope) {
         var vm = this;
         vm.loadOfferImage = loadOfferImage;
-        var map = {"Arrival5XT": "5x reward point on travel",
-        "Arrival5XR":"5x reward point on all retail shops"};
+        var map = {
+            "Arrival5XT": "5x reward point on travel",
+            "Arrival5XR": "5x reward point on all retail shops"
+        };
         vm.text = text;
 
         function text(key) {
@@ -73,23 +75,24 @@ app.config(['$routeProvider',
 
         function loadOfferImage() {
             var offerCard = $rootScope.offer.offer;
-            if (offerCard.indexOf('Arrival')) {
+            if (offerCard.indexOf('Arrival') >= 0) {
                 vm.offerImage = 'img/Arrival.png';
                 return;
             }
-            if (offerCard.indexOf('Carnival')) {
+            if (offerCard.indexOf('Carnival') >= 0) {
                 vm.offerImage = 'img/rewards.png';
                 return;
             }
-            if (offerCard.offer.indexOf('JetBlue')) {
+            if (offerCard.offer.indexOf('JetBlue') >= 0) {
                 vm.offerImage = 'img/jetblue.jpg';
                 return;
             }
-            if (offerCard.offer.indexOf('Apple')) {
+            if (offerCard.offer.indexOf('Apple') >= 0) {
                 vm.offerImage = 'img/apple.png';
             }
         }
 
+        loadOfferImage();
 
     }
 })();
