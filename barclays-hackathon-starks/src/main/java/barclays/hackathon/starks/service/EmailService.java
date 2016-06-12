@@ -37,8 +37,8 @@ public class EmailService {
         message.setSubject(variables.getMap().get(EmailVariables.Type.SUBJECT).toString());
         message.setFrom(new InternetAddress("gmail.com id", "Barclays Hackathon"));
         message.setTo(variables.getMap().get(EmailVariables.Type.USER_EMAIL).toString());
-        final String htmlContent = this.templateEngine.process(template, ctx);
-        message.setText(htmlContent, true);
+//        final String htmlContent = this.templateEngine.process(template, ctx);
+        message.setText("some-message", true);
         javaMailSender.send(mimeMessage);
     }
 }
