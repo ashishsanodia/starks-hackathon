@@ -30,14 +30,15 @@ app.config(['$routeProvider',
         function login() {
             $rootScope.isLoggedIn = true;
             $rootScope.email = vm.email;
-            $http.get('http://localhost:8080/recommend/' + vm.email)
+            $http.get('http://localhost:8080/recommend/' + $rootScope.email)
                 .success(function (res) {
                     $rootScope.offer = res;
+                    $location.path('offer');
                 })
                 .error(function (res) {
                     console.log("error occurred " + res)
                 });
-            $location.path('offer');
+
         }
     }
 })();
@@ -59,6 +60,36 @@ app.config(['$routeProvider',
         .module('app')
         .controller('OfferController', OfferController);
     OfferController.$inject = ['$rootScope'];
-    function OfferController() {
+    function OfferController($rootScope) {
+        var vm = this;
+        vm.loadOfferImage = loadOfferImage;
+        var map = {"Arrival5XT": "5x reward point on travel",
+        "Arrival5XR":"5x reward point on all retail shops"};
+        vm.text = text;
+
+        function text(key) {
+            return map[key]
+        }
+
+        function loadOfferImage() {
+            var offerCard = $rootScope.offer.offer;
+            if (offerCard.indexOf('Arrival')) {
+                vm.offerImage = 'img/Arrival.png';
+                return;
+            }
+            if (offerCard.indexOf('Carnival')) {
+                vm.offerImage = 'img/rewards.png';
+                return;
+            }
+            if (offerCard.offer.indexOf('JetBlue')) {
+                vm.offerImage = 'img/jetblue.jpg';
+                return;
+            }
+            if (offerCard.offer.indexOf('Apple')) {
+                vm.offerImage = 'img/apple.png';
+            }
+        }
+
+
     }
 })();

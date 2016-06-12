@@ -31,7 +31,7 @@
 
 </head>
 
-<body>
+<body data-ng-cloak>
 
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
@@ -50,8 +50,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#login" data-ng-show="isLoggedIn">Welcome {{offer.userName}}!</a>
+                <li data-ng-cloak>
+                    <a href="#login" data-ng-if="isLoggedIn">Welcome {{offer.userName}}!</a>
                 </li>
                 <li>
                     <a href="#login" data-ng-hide="isLoggedIn">Login</a>

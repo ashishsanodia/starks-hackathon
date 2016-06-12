@@ -21,13 +21,13 @@ public class MockDataService {
             return getMockDataForUserHavingBirthdayLifeMoment(email);
         }
         if (email.contains("existing_user@mail")) {
-            return getMockDataForExistingUser();
+            return getMockDataForExistingUser(email);
         }
         return getMockDataForNewUser(email);
     }
 
-    private User getMockDataForExistingUser() {
-        User existingUser = new User("id-1", "David", "existing_user@mail", METRO, new LocalDate(1988, 8, 29),
+    private User getMockDataForExistingUser(String email) {
+        User existingUser = new User("id-1", "David M", email, METRO, new LocalDate(1988, 8, 29),
                 "Travel", MARRIAGE, AGE_RANGE_25_35, Arrival);
         existingUser.setExistingCustomer(true);
 
@@ -35,12 +35,12 @@ public class MockDataService {
     }
 
     private User getMockDataForNewUser(String email) {
-        return new User("id-1", "David", email, METRO, new LocalDate(1988, 8, 29), "Travel", MARRIAGE,
+        return new User("id-1", "David N", email, METRO, new LocalDate(1988, 8, 29), "Travel", MARRIAGE,
                 AGE_RANGE_25_35, null);
     }
 
     private User getMockDataForUserHavingBirthdayLifeMoment(String email) {
-        return new User("id-1", "David", email, METRO, new LocalDate(1988, 8, 29), "Travel", BIRTHDAY,
+        return new User("id-1", "David B", email, METRO, new LocalDate(1988, 8, 29), "Travel", BIRTHDAY,
                 AGE_RANGE_25_35, Arrival);
     }
 }
