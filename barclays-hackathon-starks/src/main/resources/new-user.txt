@@ -45,13 +45,13 @@ Birthday AGE_RANGE_35_PLUS MT Apple
 Birthday AGE_RANGE_17_25 NMT Apple
 Birthday AGE_RANGE_25_35 NMT Carnival
 Birthday AGE_RANGE_35_PLUS NMT Carnival
-Carnival Marriage AGE_RANGE_35_PLUS MT Carnival
-Carnival Marriage AGE_RANGE_17_25 NMT Carnival
-Carnival Marriage AGE_RANGE_25_35 NMT Apple
-Carnival Marriage AGE_RANGE_35_PLUS NMT Carnival
-Carnival Birthday AGE_RANGE_17_25 MT Carnival
-Carnival Birthday AGE_RANGE_25_35 MT Carnival
-Carnival Birthday AGE_RANGE_35_PLUS MT Carnival
-Carnival Birthday AGE_RANGE_17_25 NMT Apple
-Carnival Birthday AGE_RANGE_25_35 NMT Arrival
+Marriage AGE_RANGE_35_PLUS MT Carnival
+Marriage AGE_RANGE_17_25 NMT Carnival
+Marriage AGE_RANGE_25_35 NMT Apple
+Marriage AGE_RANGE_35_PLUS NMT Carnival
+Birthday AGE_RANGE_17_25 MT Carnival
+Birthday AGE_RANGE_25_35 MT Carnival
+Birthday AGE_RANGE_35_PLUS MT Carnival
+Birthday AGE_RANGE_17_25 NMT Apple
+Birthday AGE_RANGE_25_35 NMT Arrival
 Carnival Birthday AGE_RANGE_35_PLUS NMT Arrival
